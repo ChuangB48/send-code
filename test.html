@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body bgcolor="black">
+        <button onclick="javascript: c()">
+            send
+        </button>
+    </body>
+    <script>
+        const socket=new WebSocket('ws://localhost:8080');
+        socket.onmessage=e=>{
+            console.log(e.toString());
+        }
+        function c(){
+            socket.send("click");
+        }
+    </script>
+</html>
